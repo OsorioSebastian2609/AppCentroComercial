@@ -15,9 +15,26 @@ namespace Aplicacion_Centros_Comerciales.Controllers
 
         public IActionResult Index()
         {
-            
-            return View();
+            var CentrosComerciales = new CentroComercialModel();
+            CentrosComerciales.CentrosComerciales = Negocio.Centros_Comerciales.Centros_Comerciales_Activos();
+            return View(CentrosComerciales);
           
+        }
+
+      
+        public IActionResult GetTiendas(long id, string Nombre)
+        {
+            try {
+                var Tiendas = new TiendasModel();
+                Tiendas.Tiendas = Negocio.Tiendas.ListarTiendas(id);
+                Tiendas.NombreCentroComercial = Nombre;
+                return Json(Tiendas);
+            }
+            catch(Exception e)
+            {
+                return Json(e.Message);
+            }
+            
         }
 
         public IActionResult Privacy()
