@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Aplicacion_Centros_Comerciales.Models;
+
 
 namespace Aplicacion_Centros_Comerciales.Controllers
 {
@@ -8,12 +10,18 @@ namespace Aplicacion_Centros_Comerciales.Controllers
         {
             return View();
         }
-        public ActionResult LoginView(string Correo, string contraseña)
+        public ActionResult LoginViewdos()
         {
+            return View("Formulario");
+        }
+        public ActionResult Datos(string Correo, string contraseña)
+        {
+            UsuarioModel Usuario = new UsuarioModel();
             bool TipoUsuario = false;
 
             return View();
         }
+        
 
     }
 }

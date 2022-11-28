@@ -1553,11 +1553,11 @@ C:\Users\User\Desktop\Programaciondosweb-master\Aplicacion_Centros_Comerciales\o
 C:\Users\User\Desktop\Programaciondosweb-master\Aplicacion_Centros_Comerciales\obj\Debug\net6.0\Aplicacion_Centros_Comerciales.pdb
 C:\Users\User\Desktop\Programaciondosweb-master\Aplicacion_Centros_Comerciales\obj\Debug\net6.0\Aplicacion_Centros_Comerciales.genruntimeconfig.cache
 C:\Users\User\Desktop\Programaciondosweb-master\Aplicacion_Centros_Comerciales\obj\Debug\net6.0\ref\Aplicacion_Centros_Comerciales.dll
-C:\Users\cesar\source\repos\ProyectoWeb\AppCentroComercial\Aplicacion_Centros_Comerciales\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\cesar\source\repos\ProyectoWeb\AppCentroComercial\Aplicacion_Centros_Comerciales\bin\Debug\net6.0\appsettings.json
 C:\Users\cesar\source\repos\ProyectoWeb\AppCentroComercial\Aplicacion_Centros_Comerciales\bin\Debug\net6.0\Servicios.deps.json
 C:\Users\cesar\source\repos\ProyectoWeb\AppCentroComercial\Aplicacion_Centros_Comerciales\bin\Debug\net6.0\Servicios.runtimeconfig.json
 C:\Users\cesar\source\repos\ProyectoWeb\AppCentroComercial\Aplicacion_Centros_Comerciales\bin\Debug\net6.0\Servicios.exe
+C:\Users\cesar\source\repos\ProyectoWeb\AppCentroComercial\Aplicacion_Centros_Comerciales\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\cesar\source\repos\ProyectoWeb\AppCentroComercial\Aplicacion_Centros_Comerciales\bin\Debug\net6.0\appsettings.json
 C:\Users\cesar\source\repos\ProyectoWeb\AppCentroComercial\Aplicacion_Centros_Comerciales\bin\Debug\net6.0\Aplicacion_Centros_Comerciales.staticwebassets.runtime.json
 C:\Users\cesar\source\repos\ProyectoWeb\AppCentroComercial\Aplicacion_Centros_Comerciales\bin\Debug\net6.0\Aplicacion_Centros_Comerciales.exe
 C:\Users\cesar\source\repos\ProyectoWeb\AppCentroComercial\Aplicacion_Centros_Comerciales\bin\Debug\net6.0\Aplicacion_Centros_Comerciales.deps.json
