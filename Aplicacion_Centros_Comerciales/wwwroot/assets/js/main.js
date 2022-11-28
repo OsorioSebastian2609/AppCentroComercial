@@ -318,3 +318,53 @@
   }
 
 })();
+
+async function getTiendas(id,Nombre) {
+
+    await axios.get('http://localhost:5183/Home/GetTiendas?id=' + id + '&Nombre=' + Nombre)
+        .then((respuesta) => {
+            if (respuesta.status === 200) {
+                ListarTiendas(respuesta.data)
+            }
+            else {
+                window.alert(respuesta.status)
+            }
+        })
+        .catch((Error) => {
+            window.alert(Error);
+        })
+
+}
+function ListarTiendas(Tiendas) {
+
+    var texto = "";
+    var lista = JSON.stringify(Tiendas);
+    var ListaTiendas = JSON.parse(lista);
+    var fila = 0;
+    var id = 1;
+    document.getElementById('Titulo').value = ListaTiendas.Nombre;
+    console.log(ListaTiendas.tiendas)
+
+    ListaTiendas.tiendas.forEach(item => {
+       
+            texto += `
+             <div class="card" id="${item.id}">
+            <img class="card-img-top" src="${item.imagen}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">${item.name}</h5>
+                <p class="card-text">Local: ${item.noLocal}</p>
+                <button class="btn btn-primary" onclick="getInfoTienda(@item.Id, @item.Name)">Ver info</button>
+            </div>
+            </div>
+        `;
+        fila++;
+        if (fila >= 3) {
+            var text = "grupo" + id;
+            document.getElementById(text).innerHTML = texto;
+            texto = ""
+            fila = 0;
+            id++;
+        }
+
+    });
+}

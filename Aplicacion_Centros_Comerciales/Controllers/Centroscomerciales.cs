@@ -8,6 +8,7 @@ namespace Aplicacion_Centros_Comerciales.Controllers
         {
             return View();
         }
+
         public ActionResult CentrocomercialView(string change)
         {
             if (change == "1")

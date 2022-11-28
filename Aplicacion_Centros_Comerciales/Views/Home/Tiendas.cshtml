@@ -1,0 +1,35 @@
+﻿
+@model Aplicacion_Centros_Comerciales.Models.TiendasModel
+@{
+    var filas = 0;
+    var id = 1;
+}
+
+<div class="text-center" id="pagina">
+    
+   <p><h1 class="display-4" id="Titulo">@Model.NombreCentroComercial/h1> </p>
+
+@foreach(var item in Model.Tiendas)
+{
+    if(filas == 0)
+    {
+        @:<div class="card-group mt-5" id="grupo @id">
+    }
+        <div class="card" id="@item.Id">
+            <img class="card-img-top" src="@item.Imagen" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">CENTRO COMERCIAL @item.Name</h5>
+                <p class="card-text">Local: @item.NoLocal</p>
+                <button class="btn btn-primary" onclick="getInfo(@item.Id)">Ver tiendas</button>
+            </div>
+        </div>
+        filas++;
+
+    if(filas >=3)
+    {
+        id++;
+        @:</div>
+        filas = 0;
+    }
+}
+</div>
