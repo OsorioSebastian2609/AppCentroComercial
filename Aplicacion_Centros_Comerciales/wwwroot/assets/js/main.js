@@ -347,6 +347,11 @@ function ListarTiendas(Tiendas) {
 
     ListaTiendas.tiendas.forEach(item => {
        
+        if (fila == 0) {
+
+            texo += `<div class="card-group mt-5" id="grupo ${item.id}">`;
+        }
+
             texto += `
              <div class="card" id="${item.id}">
             <img class="card-img-top" src="${item.imagen}" alt="Card image cap">
@@ -359,9 +364,7 @@ function ListarTiendas(Tiendas) {
         `;
         fila++;
         if (fila >= 3) {
-            var text = "grupo" + id;
-            document.getElementById(text).innerHTML = texto;
-            texto = ""
+            texo += `</div`;
             fila = 0;
             id++;
         }
