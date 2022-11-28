@@ -27,7 +27,7 @@ namespace Negocio
                         Id = p.IdCentroComercial,
                         Name = p.Nombre,
                         Address = p.Direccion,
-                        Imagen = "/Imagen/CentrosComerciales/" + p.Nombre.ToString() + ".png"
+                        Imagen = p.Imagen
                     }).ToList();
 
                     return SCdb;

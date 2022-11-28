@@ -14,7 +14,7 @@ namespace Datos
         public string Nombre { get; set; } = null!;
         public string Direccion { get; set; } = null!;
         public bool Estado { get; set; }
-        public string? Imagen { get; set; }
+        public string Imagen { get; set; } = null!;
 
         public virtual ICollection<ShopingCenterStore> ShopingCenterStores { get; set; }
     }
