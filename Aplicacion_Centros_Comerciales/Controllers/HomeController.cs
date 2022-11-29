@@ -15,9 +15,10 @@ namespace Aplicacion_Centros_Comerciales.Controllers
 
         public IActionResult Index()
         {
+
             var CentrosComerciales = new CentroComercialModel();
             CentrosComerciales.CentrosComerciales = Negocio.Centros_Comerciales.Centros_Comerciales_Activos();
-            return View(CentrosComerciales);
+            return View(CentrosComerciales );
           
         }
 

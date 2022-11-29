@@ -76,13 +76,10 @@ namespace Aplicacion_Centros_Comerciales
             });
 
             //Solicitud para actualizar perfil del usuario
-            app.MapPut("/Api/ActualizarPerfil", (string nombre, string correo, string contraseña) =>
+            app.MapPut("/Api/ActualizarPerfil", (string usuario, string nombre, string correo) =>
             {
-                return Negocio.Perfil.ActualizarPerfil(new Negocio.Perfil()
-                {
-                    Nombre = nombre,
-                    Correo = correo,
-                });
+                return Negocio.Perfil.ActualizarPerfil(usuario, nombre, correo);
+               
             });
 
 

@@ -27,7 +27,7 @@ namespace Datos
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=SQL8003.site4now.net;Initial Catalog=db_a8f07a_centroscomerciales;User Id=db_a8f07a_centroscomerciales_admin;Password=Emilio0105");
+                optionsBuilder.UseSqlServer("Data Source=SQL8002.site4now.net;Initial Catalog=db_a8f07a_centroscomerciales;User Id=db_a8f07a_centroscomerciales_admin;Password=Emilio0105");
             }
         }
 
@@ -58,7 +58,7 @@ namespace Datos
                     .IsUnicode(false);
 
                 entity.Property(e => e.Imagen)
-                    .HasMaxLength(1000)
+                    .HasMaxLength(2048)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Nombre)

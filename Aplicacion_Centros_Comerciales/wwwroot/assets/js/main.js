@@ -342,14 +342,14 @@ function ListarTiendas(Tiendas) {
     var ListaTiendas = JSON.parse(lista);
     var fila = 0;
     var id = 1;
-    document.getElementById('Titulo').value = ListaTiendas.Nombre;
-    console.log(ListaTiendas.tiendas)
 
+    console.log(ListaTiendas.tiendas)
+    texto = `<p><h1 class="display-4" id="Titulo"></h1> </p>`
     ListaTiendas.tiendas.forEach(item => {
        
         if (fila == 0) {
 
-            texo += `<div class="card-group mt-5" id="grupo ${item.id}">`;
+            texto += `<div class="card-group mt-5" id="grupo ${item.id}">`;
         }
 
             texto += `
@@ -364,10 +364,10 @@ function ListarTiendas(Tiendas) {
         `;
         fila++;
         if (fila >= 3) {
-            texo += `</div`;
+            texto += `</div>`;
             fila = 0;
             id++;
         }
-
+        document.getElementById('pagina').innerHTML = texto;
     });
 }

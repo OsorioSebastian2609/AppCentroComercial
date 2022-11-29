@@ -17,24 +17,30 @@ namespace Negocio
 
         public string? Username { get; set; }
 
-        public static int ValidarPerfil(Perfil user)
+        public static Perfil ValidarPerfil(string user,string password)
         {
             try
             {
                 using (var db = new AplicacionCCContext())
                 {
-                    var Usuario = db.Users.FirstOrDefault(x => x.Username == user.Username && x.Contraseña == user.Contraseña);
+                    var Usuario = db.Users.FirstOrDefault(x => x.Username == user && x.Contraseña == password);
                     if (Usuario != null)
                     {
-                        return 1;
+                        
+                        return new Perfil
+                        {
+                            Nombre = Usuario.Nombre,
+                            Correo = Usuario.Correo,
+                            Username = Usuario.Username,
+                            Contraseña = Usuario.Contraseña
+                        };
                     }
                     else { throw new Exception("No existe usuario"); }
                 }
             }
             catch (Exception e) 
             {
-                if(e.ToString() != "No existe usuario") return 2;
-                else return 0; 
+                return null;
             } 
         }
 
@@ -58,28 +64,33 @@ namespace Negocio
             }
             catch(Exception){ return 0; }
         }
-        public static int ActualizarPerfil(Perfil usuario)
+        public static string ActualizarPerfil(string usuario, string nombre, string correo)
         {
             try
             {
                 using (var db = new Datos.AplicacionCCContext())
                 {
-                    var user = db.Users.FirstOrDefault(x => x.Username == usuario.Username);
+                    var user = db.Users.FirstOrDefault(x => x.Username == usuario);
                     if(user != null)
                     {
-                        user.Nombre = usuario.Nombre;
-                        user.Correo = usuario.Correo;
+                        if(nombre != null)
+                        {
+                            user.Nombre = nombre;
+                        }
+                        if(correo != null)
+                        {
+                            user.Correo = correo;
+                        }
                         db.SaveChanges();
-                        return 1;
+                        return "1"; 
                     }
                     else throw new Exception("No se encontro el perfil"); 
                 }
-                
             }
             catch (Exception e)
             {
-                if (e.ToString() != "No se encontro el perfil") return 2;
-                else return 0;
+                if (e.ToString() != "No se encontro el perfil") return e.ToString();
+                else return e.ToString();
             }
         }
     }
